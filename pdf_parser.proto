@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package pdfparser;
+
+service PDFParserService {
+  rpc ProcessPDF (PDFRequest) returns (PDFResponse);
+}
+
+message PDFRequest {
+  string pdf_path = 1;
+}
+
+message PDFResponse {
+  double total_time = 1;
+  string result = 2;
+}
